@@ -10,99 +10,1574 @@
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./icon-192.png">
 <title>USA Technical Trip 2026</title>
+
 <style>
-:root{--bg:#f5f7f6;--card:#fff;--text:#162019;--muted:#66736b;--line:#dce4df;--green:#0b6b3a;--soft:#e7f3eb;--warn:#fff5e8;--warnl:#edb96f;--danger:#fff0ef;--dangerl:#e59a92}
-*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Arial,sans-serif}
-body{line-height:1.45}.app{max-width:760px;margin:auto;padding:0 14px 100px}.hero{padding:22px 3px 14px}.kicker{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
-h1{font-size:29px;line-height:1.05;margin:6px 0}.sub,.small{font-size:13px;color:var(--muted)}.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 13px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
-.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 13px;white-space:nowrap;font-weight:800;min-height:44px}.tab.active{background:var(--green);border-color:var(--green);color:#fff}
-.panel{display:none}.panel.active{display:block}.dayhead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin:4px 2px 13px}.dayhead h2{margin:1px 0 0;font-size:23px}.badge{background:var(--soft);color:var(--green);border-radius:999px;padding:6px 9px;font-size:12px;font-weight:800}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin-bottom:12px}.card h3{font-size:16px;margin:0 0 10px}.mission{background:linear-gradient(135deg,#0b6b3a,#174f36);color:#fff;border:0}.mission .small{color:#dcebe2}
-.section{font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin:18px 3px 8px}.t{display:grid;grid-template-columns:64px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #eef2ef;font-size:14px}.t:last-child{border-bottom:0}.time{font-weight:900;color:var(--green)}
-.ck{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid #eef2ef;font-size:14px}.ck:last-child{border-bottom:0}.ck input{width:21px;height:21px;accent-color:var(--green);flex:none}
-.row{display:grid;grid-template-columns:112px 1fr;gap:8px;padding:8px 0;border-bottom:1px solid #eef2ef;font-size:13px}.row:last-child{border-bottom:0}.row b{color:var(--muted)}.q{padding:9px 0;border-bottom:1px solid #eef2ef;font-size:14px}.q:last-child{border-bottom:0}.quote{border-left:4px solid var(--green);padding-left:11px;font-size:14px;font-weight:750;margin-top:12px}
-.alert{border-radius:16px;padding:13px 14px;margin-bottom:12px;font-size:13px}.warn{background:var(--warn);border:1px solid var(--warnl)}.danger{background:var(--danger);border:1px solid var(--dangerl)}
-textarea{width:100%;min-height:130px;border:1px solid var(--line);border-radius:14px;background:#fbfcfb;padding:12px;font-size:16px;color:var(--text)}
-.bottom{position:sticky;bottom:0;background:rgba(245,247,246,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:9px 0 calc(9px + env(safe-area-inset-bottom));display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:18px}
-.nav{border:0;background:transparent;color:var(--muted);font-weight:800;padding:9px;border-radius:12px;min-height:52px}.nav.active{background:var(--soft);color:var(--green)}
-.install{display:none;margin:0 0 12px}.install.show{display:block}.install button{width:100%;border:0;border-radius:14px;background:var(--green);color:#fff;font-weight:850;padding:12px;min-height:46px}
+:root{
+  --bg:#f5f7f6;
+  --card:#fff;
+  --text:#162019;
+  --muted:#66736b;
+  --line:#dce4df;
+  --green:#0b6b3a;
+  --soft:#e7f3eb;
+  --blue:#285f87;
+  --blue-soft:#eaf3f8;
+  --amber-soft:#fff6df;
+  --danger-soft:#fff0ef;
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Arial,sans-serif
+}
+body{line-height:1.46}
+.app{max-width:780px;margin:0 auto;padding:0 14px 110px}
+.hero{padding:24px 3px 16px}
+.kicker{
+  font-size:12px;
+  font-weight:850;
+  text-transform:uppercase;
+  letter-spacing:.11em;
+  color:var(--muted)
+}
+h1{font-size:30px;line-height:1.05;margin:6px 0}
+h2{font-size:24px;line-height:1.1}
+.subtitle,.small{font-size:13px;color:var(--muted)}
+
+.tabs{
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:4px 0 13px;
+  scrollbar-width:none
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  border:1px solid var(--line);
+  background:#fff;
+  border-radius:999px;
+  padding:10px 13px;
+  white-space:nowrap;
+  font-weight:850;
+  min-height:44px;
+  color:var(--text)
+}
+.tab.active{
+  background:var(--green);
+  border-color:var(--green);
+  color:#fff
+}
+
+.panel{display:none}
+.panel.active{display:block}
+
+.dayhead{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:flex-start;
+  margin:5px 2px 14px
+}
+.dayhead h2{margin:2px 0 0}
+
+.badge{
+  background:var(--soft);
+  color:var(--green);
+  border-radius:999px;
+  padding:6px 9px;
+  font-size:12px;
+  font-weight:850;
+  white-space:nowrap
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+  margin-bottom:12px
+}
+.card h3{font-size:16px;margin:0 0 10px}
+
+.mission{
+  background:linear-gradient(135deg,#0b6b3a,#174f36);
+  color:#fff;
+  border:0
+}
+.mission .small{color:#dcebe2}
+
+.section{
+  font-size:12px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  color:var(--muted);
+  margin:19px 3px 8px
+}
+
+.t{
+  display:grid;
+  grid-template-columns:66px 1fr;
+  gap:9px;
+  padding:9px 0;
+  border-bottom:1px solid #eef2ef;
+  font-size:14px
+}
+.t:last-child{border-bottom:0}
+.time{font-weight:900;color:var(--green)}
+
+.ck{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  padding:9px 0;
+  border-bottom:1px solid #eef2ef;
+  font-size:14px
+}
+.ck:last-child{border-bottom:0}
+.ck input{
+  width:21px;
+  height:21px;
+  accent-color:var(--green);
+  flex:0 0 auto
+}
+
+.row{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:8px;
+  padding:8px 0;
+  border-bottom:1px solid #eef2ef;
+  font-size:13px
+}
+.row:last-child{border-bottom:0}
+.row b{color:var(--muted)}
+
+.q{
+  padding:9px 0;
+  border-bottom:1px solid #eef2ef;
+  font-size:14px
+}
+.q:last-child{border-bottom:0}
+.q b{display:block}
+
+.quote{
+  border-left:4px solid var(--green);
+  padding-left:11px;
+  font-size:14px;
+  font-weight:750;
+  margin-top:12px
+}
+
+.msg{
+  background:var(--blue-soft);
+  border:1px solid #cfe2ee;
+  border-radius:15px;
+  padding:12px 13px;
+  margin:9px 0;
+  font-size:14px
+}
+.msg b{color:var(--blue)}
+
+.callout{
+  background:var(--amber-soft);
+  border:1px solid #ead8a5;
+  border-radius:15px;
+  padding:12px 13px;
+  font-size:13px;
+  margin:10px 0
+}
+
+.alert{
+  border-radius:16px;
+  padding:13px 14px;
+  margin-bottom:12px;
+  font-size:13px
+}
+.alert.warn{
+  background:#fff5e8;
+  border:1px solid #edb96f
+}
+.alert.danger{
+  background:var(--danger-soft);
+  border:1px solid #e59a92
+}
+
+textarea{
+  width:100%;
+  min-height:135px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fbfcfb;
+  padding:12px;
+  font-size:16px;
+  color:var(--text);
+  resize:vertical
+}
+
+.bottom{
+  position:sticky;
+  bottom:0;
+  background:rgba(245,247,246,.94);
+  backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);
+  padding:9px 0 calc(9px + env(safe-area-inset-bottom));
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:7px;
+  margin-top:20px
+}
+.nav{
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  font-weight:850;
+  padding:9px;
+  border-radius:12px;
+  min-height:52px
+}
+.nav.active{
+  background:var(--soft);
+  color:var(--green)
+}
+
+@media(max-width:430px){
+  h1{font-size:27px}
+  .dayhead h2{font-size:22px}
+  .row{grid-template-columns:105px 1fr}
+}
 </style>
 </head>
+
 <body>
+
 <div class="app" id="app">
-<section class="hero"><div class="kicker">Raleigh • Nashville • 02–09 Sep 2026</div><h1>USA Technical Trip</h1><div class="sub">Agenda técnica, voos, carros, hospedagens, checklists e learnings.</div></section>
-<div class="install" id="installBox"><button id="installBtn">Adicionar este app ao dispositivo</button></div>
-<nav class="tabs">
-<button class="tab" data-id="d2">02 SEP</button><button class="tab active" data-id="d3">03 SEP</button><button class="tab" data-id="d4">04 SEP</button><button class="tab" data-id="d5">05 SEP</button><button class="tab" data-id="d6">06 SEP</button><button class="tab" data-id="d7">07 SEP</button><button class="tab" data-id="d8">08 SEP</button><button class="tab" data-id="d9">09 SEP</button>
+
+<section class="hero">
+  <div class="kicker">Raleigh • Nashville • 02–09 Sep 2026</div>
+  <h1>USA Technical Trip</h1>
+  <div class="subtitle">
+    Agenda técnica, voos, carros, reuniões, checklists e learnings.
+  </div>
+</section>
+
+<nav class="tabs" aria-label="Dias da viagem">
+  <button class="tab" data-id="d2">02 SEP</button>
+  <button class="tab active" data-id="d3">03 SEP</button>
+  <button class="tab" data-id="d4">04 SEP</button>
+  <button class="tab" data-id="d5">05 SEP</button>
+  <button class="tab" data-id="d6">06 SEP</button>
+  <button class="tab" data-id="d7">07 SEP</button>
+  <button class="tab" data-id="d8">08 SEP</button>
+  <button class="tab" data-id="d9">09 SEP</button>
 </nav>
 
+<!-- ==================== 02 SEP ==================== -->
+
 <section class="panel" id="d2">
-<div class="dayhead"><div><div class="kicker">Quarta-feira</div><h2>02 SEP · Arrival</h2></div><span class="badge">Raleigh</span></div>
-<div class="card mission"><h3>Missão</h3><div class="small">Chegar, retirar o carro, adaptar ao fuso e preservar energia para o campo.</div></div>
-<div class="card"><h3>🚙 Turo · Rental #1</h3><div class="row"><b>Host</b><span>WESTGATE RENTALS RALEIGH LLC</span></div><div class="row"><b>Vehicle</b><span>Mitsubishi</span></div><div class="row"><b>Pickup</b><span>02 Sep · 09:00</span></div><div class="row"><b>Location</b><span>Raleigh-Durham International Airport</span></div><div class="row"><b>Return</b><span>05 Sep · 09:00</span></div></div>
-<div class="card"><div class="t"><div class="time">~10:30</div><div><b>Chegada em RDU</b></div></div><div class="t"><div class="time">16:00</div><div><b>Check-in</b><div class="small">3516 Ranlo Dr, Raleigh</div></div></div><div class="t"><div class="time">18:30</div><div><b>Jantar + descanso</b></div></div></div>
+
+<div class="dayhead">
+  <div>
+    <div class="kicker">Quarta-feira</div>
+    <h2>02 SEP · Arrival</h2>
+  </div>
+  <span class="badge">Raleigh</span>
+</div>
+
+<div class="card mission">
+  <h3>Missão do dia</h3>
+  <div class="small">
+    Chegar, retirar o carro, adaptar ao fuso e preservar energia para o campo.
+  </div>
+</div>
+
+<div class="card">
+  <h3>🚙 Turo · Rental #1</h3>
+
+  <div class="row">
+    <b>Host</b>
+    <span>WESTGATE RENTALS RALEIGH LLC</span>
+  </div>
+
+  <div class="row">
+    <b>Vehicle</b>
+    <span>Mitsubishi</span>
+  </div>
+
+  <div class="row">
+    <b>Pickup</b>
+    <span>02 Sep · 09:00</span>
+  </div>
+
+  <div class="row">
+    <b>Location</b>
+    <span>Raleigh-Durham International Airport</span>
+  </div>
+
+  <div class="row">
+    <b>Return</b>
+    <span>05 Sep · 09:00</span>
+  </div>
+</div>
+
+<div class="card">
+
+  <div class="t">
+    <div class="time">~10:30</div>
+    <div>
+      <b>Chegada em RDU</b>
+    </div>
+  </div>
+
+  <div class="t">
+    <div class="time">16:00</div>
+    <div>
+      <b>Check-in</b>
+      <div class="small">3516 Ranlo Dr, Raleigh, NC</div>
+    </div>
+  </div>
+
+  <div class="t">
+    <div class="time">18:30</div>
+    <div>
+      <b>Jantar + descanso</b>
+    </div>
+  </div>
+
+</div>
+
 </section>
+
+<!-- ==================== 03 SEP ==================== -->
 
 <section class="panel active" id="d3">
-<div class="dayhead"><div><div class="kicker">Technical Field Day</div><h2>03 SEP · April / PPO</h2></div><span class="badge">Morrisville</span></div>
-<div class="card mission"><h3>Today's Mission</h3><div class="small">Understand where PPO adds real value beyond initial Palmer control and identify stewardship risks and learnings transferable to Brazil.</div></div>
-<div class="card"><h3>Programação</h3><div class="t"><div class="time">07:00</div><div><b>Café + preparação</b></div></div><div class="t"><div class="time">08:00</div><div><b>PPO Field Trials com April</b></div></div><div class="t"><div class="time">12:00</div><div><b>Fechamento + almoço</b></div></div><div class="t"><div class="time">14:00</div><div><b>Tarde livre / compras leves</b></div></div><div class="t"><div class="time">19:00</div><div><b>US Learnings — Day 1</b></div></div></div>
 
-<div class="section">Experimental design</div><div class="card"><h3>Antes de entrar nos plots</h3>
-<label class="ck"><input type="checkbox" data-k="obj"><span>Objetivo principal do trial</span></label><label class="ck"><input type="checkbox" data-k="trial"><span>Trial ID / protocolo / local</span></label><label class="ck"><input type="checkbox" data-k="trait"><span>Cultivar / trait</span></label><label class="ck"><input type="checkbox" data-k="plant"><span>Data de plantio / estágio do algodão</span></label><label class="ck"><input type="checkbox" data-k="apps"><span>PRE / EPOST / POST / sequenciais</span></label><label class="ck"><input type="checkbox" data-k="rates"><span>Doses, datas, DAA, misturas e adjuvantes</span></label><label class="ck"><input type="checkbox" data-k="spray"><span>Volume, pontas, pressão e condições ambientais</span></label><label class="ck"><input type="checkbox" data-k="soil"><span>Solo: textura, MO e pH</span></label><label class="ck"><input type="checkbox" data-k="resistance"><span>Perfil de resistência da população de Palmer</span></label><label class="ck"><input type="checkbox" data-k="reps"><span>Repetições, delineamento e testemunha</span></label>
-<div class="quote">April, before we start walking through the plots, could you give me the main question this trial was designed to answer?</div></div>
+<div class="dayhead">
+  <div>
+    <div class="kicker">Technical Field Day</div>
+    <h2>03 SEP · April / PPO</h2>
+  </div>
+  <span class="badge">Morrisville</span>
+</div>
 
-<div class="section">PPO performance</div><div class="card"><div class="row"><b>Initial activity</b><span>Velocidade e uniformidade.</span></div><div class="row"><b>Survivors</b><span>Número, tamanho, vigor e potencial reprodutivo.</span></div><div class="row"><b>Regrowth</b><span>Plantas que voltaram.</span></div><div class="row"><b>Residual</b><span>Tempo até novos fluxos.</span></div><div class="row"><b>Crop safety</b><span>Clorose, necrose, stand, atraso e recuperação.</span></div></div>
+<div class="card mission">
+  <h3>Today's Mission</h3>
+  <div class="small">
+    Understand where PPO adds real value beyond initial Palmer control and
+    identify stewardship risks and learnings transferable to Brazil.
+  </div>
+</div>
 
-<div class="section">Palmer amaranth</div><div class="card"><label class="ck"><input type="checkbox" data-k="pal1"><span>Estimar sobreviventes/m²</span></label><label class="ck"><input type="checkbox" data-k="pal2"><span>Tamanho e vigor</span></label><label class="ck"><input type="checkbox" data-k="pal3"><span>Potencial de sementes</span></label><label class="ck"><input type="checkbox" data-k="pal4"><span>Escape POST × nova emergência</span></label><label class="ck"><input type="checkbox" data-k="pal5"><span>Novos flushes</span></label></div>
+<div class="card">
+  <h3>Programação</h3>
 
-<div class="section">Top questions</div><div class="card">
-<div class="q"><b>1. What is the main question this trial was designed to answer?</b></div><div class="q"><b>2. Which treatment surprised you the most?</b></div><div class="q"><b>3. Where is PPO really adding value?</b></div><div class="q"><b>4. What are the main weaknesses?</b></div><div class="q"><b>5. How does Palmer size affect control?</b></div><div class="q"><b>6. Survivors or new emergence?</b></div><div class="q"><b>7. How much residual activity are you getting?</b></div><div class="q"><b>8. How important is glufosinate?</b></div><div class="q"><b>9. What stewardship mistake should Brazil avoid?</b></div><div class="q"><b>10. What would the ideal Palmer program look like for the next five years?</b></div></div>
-<div class="card"><h3>US Learnings — Day 1</h3><textarea data-note="d3learn" placeholder="Registre os principais aprendizados..."></textarea></div>
+  <div class="t">
+    <div class="time">07:00</div>
+    <div><b>Café + preparação</b></div>
+  </div>
+
+  <div class="t">
+    <div class="time">08:00</div>
+    <div><b>PPO Field Trials com April</b></div>
+  </div>
+
+  <div class="t">
+    <div class="time">12:00</div>
+    <div><b>Fechamento + almoço</b></div>
+  </div>
+
+  <div class="t">
+    <div class="time">14:00</div>
+    <div><b>Tarde livre / compras leves</b></div>
+  </div>
+
+  <div class="t">
+    <div class="time">19:00</div>
+    <div><b>US Learnings — Day 1</b></div>
+  </div>
+</div>
+
+<div class="section">Experimental design</div>
+
+<div class="card">
+
+<h3>Antes de entrar nos plots</h3>
+
+<label class="ck">
+<input type="checkbox" data-k="obj">
+<span>Objetivo principal do trial</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="trial">
+<span>Trial ID / protocolo / local</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="trait">
+<span>Cultivar / trait</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="plant">
+<span>Data de plantio / estágio do algodão</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="apps">
+<span>PRE / EPOST / POST / sequenciais</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="rates">
+<span>Doses, datas, DAA, misturas e adjuvantes</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="spray">
+<span>Volume, pontas, pressão e condições ambientais</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="soil">
+<span>Solo: textura, MO e pH</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="resistance">
+<span>Perfil de resistência da população de Palmer</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="reps">
+<span>Repetições, delineamento e testemunha</span>
+</label>
+
+<div class="quote">
+April, before we start walking through the plots, could you give me the main
+question this trial was designed to answer?
+</div>
+
+</div>
+
+<div class="section">Top questions</div>
+
+<div class="card">
+
+<div class="q">
+<b>1. What is the main question this trial was designed to answer?</b>
+</div>
+
+<div class="q">
+<b>2. Which treatment surprised you the most?</b>
+</div>
+
+<div class="q">
+<b>3. Where is PPO really adding value?</b>
+</div>
+
+<div class="q">
+<b>4. What are the main weaknesses?</b>
+</div>
+
+<div class="q">
+<b>5. How does Palmer size affect control?</b>
+</div>
+
+<div class="q">
+<b>6. Survivors or new emergence?</b>
+</div>
+
+<div class="q">
+<b>7. How much residual activity are you getting?</b>
+</div>
+
+<div class="q">
+<b>8. How important is glufosinate?</b>
+</div>
+
+<div class="q">
+<b>9. What stewardship mistake should Brazil avoid?</b>
+</div>
+
+<div class="q">
+<b>10. What would the ideal Palmer program look like for the next five years?</b>
+</div>
+
+</div>
+
+<div class="card">
+<h3>US Learnings — Day 1</h3>
+<textarea data-note="d3learn"></textarea>
+</div>
+
 </section>
 
-<section class="panel" id="d4"><div class="dayhead"><div><div class="kicker">Sexta-feira</div><h2>04 SEP · Shopping</h2></div><span class="badge">Mebane</span></div><div class="card"><div class="t"><div class="time">10:00</div><div><b>Tanger Outlets Mebane</b></div></div><div class="t"><div class="time">16:30</div><div><b>Walmart</b></div></div><div class="t"><div class="time">20:00</div><div><b>Preparar mala Nashville</b></div></div></div><div class="card"><h3>Shopping list</h3><textarea data-note="shop"></textarea></div></section>
+<!-- ==================== 04 SEP ==================== -->
 
-<section class="panel" id="d5"><div class="dayhead"><div><div class="kicker">Sábado</div><h2>05 SEP · Nashville</h2></div><span class="badge">Country Night</span></div>
-<div class="alert warn"><b>⚠️ Atenção logística</b><br>Turo #1: devolução 09:00. Voo AA 4762: partida 09:48. Ajustar drop-off.</div>
-<div class="card"><h3>✈️ AA 4762 · RDU → BNA</h3><div class="row"><b>Departure</b><span>RDU · 09:48</span></div><div class="row"><b>Arrival</b><span>BNA · 11:35</span></div><div class="row"><b>Cabin</b><span>Economy</span></div></div>
-<div class="card"><div class="t"><div class="time">15:00</div><div><b>Check-in · Lindsley Ave</b></div></div><div class="t"><div class="time">16:00</div><div><b>AJ's Good Time Bar</b></div></div><div class="t"><div class="time">19:00</div><div><b>Grand Ole Opry</b></div></div><div class="t"><div class="time">22:00</div><div><b>Morgan Wallen's This Bar</b></div></div><div class="t"><div class="time">23:30</div><div><b>Robert's Western World</b></div></div></div></section>
+<section class="panel" id="d4">
 
-<section class="panel" id="d6"><div class="dayhead"><div><div class="kicker">Domingo</div><h2>06 SEP · Nashville</h2></div><span class="badge">Full Day</span></div><div class="card"><div class="t"><div class="time">10:00</div><div><b>Country Music Hall of Fame</b></div></div><div class="t"><div class="time">14:00</div><div><b>Ryman Auditorium</b></div></div><div class="t"><div class="time">15:30</div><div><b>Johnny Cash Museum</b></div></div><div class="t"><div class="time">19:00</div><div><b>Broadway Round 2</b></div></div></div></section>
+<div class="dayhead">
+  <div>
+    <div class="kicker">Sexta-feira</div>
+    <h2>04 SEP · Shopping</h2>
+  </div>
+  <span class="badge">Mebane</span>
+</div>
 
-<section class="panel" id="d7"><div class="dayhead"><div><div class="kicker">Labor Day</div><h2>07 SEP · Back to Raleigh</h2></div><span class="badge">Recovery</span></div>
-<div class="card"><h3>✈️ AA 4337 · BNA → RDU</h3><div class="row"><b>Departure</b><span>BNA · 12:59</span></div><div class="row"><b>Arrival</b><span>RDU · 14:41</span></div><div class="row"><b>Cabin</b><span>Economy</span></div></div>
-<div class="alert danger"><b>⚠️ Horário incompatível</b><br>F-150: retirada 13:00. Voo chega RDU 14:41. Ajustar retirada com o host.</div>
-<div class="card"><h3>🚙 Turo · Ford F-150 2025</h3><div class="row"><b>Host</b><span>Kristen</span></div><div class="row"><b>Pickup</b><span>07 Sep · 13:00</span></div><div class="row"><b>Return</b><span>09 Sep · 16:00</span></div><div class="row"><b>Location</b><span>5304 Fairmead Circle, Raleigh, NC 27613</span></div></div>
-<div class="card"><b>Depois:</b><div class="small">1705 Oakwood Ave → Walmart → descanso.</div></div></section>
+<div class="card">
 
-<section class="panel" id="d8"><div class="dayhead"><div><div class="kicker">Terça-feira</div><h2>08 SEP · Misha</h2></div><span class="badge">BASF · 2TW</span></div><div class="card mission"><h3>Objetivo</h3><div class="small">Conectar aprendizados do campo à estratégia de traits e prioridades futuras do Brasil.</div></div><div class="card"><div class="row"><b>Location</b><span>2TW · sala a confirmar</span></div><div class="row"><b>Time</b><span>A confirmar</span></div><div class="row"><b>Dinner</b><span>The Angus Barn · sugestão 19:00</span></div></div><div class="card"><h3>Meeting notes</h3><textarea data-note="misha"></textarea></div></section>
+<div class="t">
+  <div class="time">10:00</div>
+  <div><b>Tanger Outlets Mebane</b></div>
+</div>
 
-<section class="panel" id="d9"><div class="dayhead"><div><div class="kicker">Quarta-feira</div><h2>09 SEP · Charlie + Greg</h2></div><span class="badge">Final Technical Day</span></div><div class="card"><div class="t"><div class="time">AM</div><div><b>Charlie Cahoon</b><div class="small">NC State · Weed Science</div></div></div><div class="t"><div class="time">PM</div><div><b>Greg Baldwin</b><div class="small">BASF · 2TW ou Davis Drive</div></div></div><div class="t"><div class="time">16:00</div><div><b>Turo F-150 return</b></div></div><div class="t"><div class="time">Night</div><div><b>Return to Brazil</b></div></div></div><div class="card"><h3>Final trip notes</h3><textarea data-note="final"></textarea></div></section>
+<div class="t">
+  <div class="time">16:30</div>
+  <div><b>Walmart</b></div>
+</div>
 
-<section class="panel" id="transport"><div class="dayhead"><div><div class="kicker">Quick Access</div><h2>Transport Hub</h2></div></div>
-<div class="card"><h3>🚙 Car #1</h3><div class="small">WESTGATE RENTALS RALEIGH LLC · Mitsubishi<br>02 Sep 09:00 → 05 Sep 09:00<br>RDU Airport</div></div>
-<div class="card"><h3>✈️ AA 4762</h3><div class="small">05 Sep · RDU 09:48 → BNA 11:35</div></div>
-<div class="card"><h3>✈️ AA 4337</h3><div class="small">07 Sep · BNA 12:59 → RDU 14:41</div></div>
-<div class="card"><h3>🚙 Car #2</h3><div class="small">Kristen · Ford F-150 2025<br>07 Sep 13:00 → 09 Sep 16:00<br>5304 Fairmead Circle, Raleigh</div></div></section>
+<div class="t">
+  <div class="time">20:00</div>
+  <div><b>Preparar mala Nashville</b></div>
+</div>
 
-<section class="panel" id="learn"><div class="dayhead"><div><div class="kicker">Cross-trip notebook</div><h2>Learnings</h2></div></div><div class="card"><h3>Field observations</h3><textarea data-note="lf"></textarea></div><div class="card"><h3>Brazil implications</h3><textarea data-note="lb"></textarea></div><div class="card"><h3>Questions to carry forward</h3><textarea data-note="lq"></textarea></div></section>
+</div>
 
-<nav class="bottom"><button class="nav active" data-nav="days">📅<br>Days</button><button class="nav" data-nav="transport">✈️<br>Transport</button><button class="nav" data-nav="learn">🧠<br>Learnings</button></nav>
+<div class="card">
+<h3>Shopping list</h3>
+<textarea data-note="shop"></textarea>
+</div>
+
+</section>
+
+<!-- ==================== 05 SEP ==================== -->
+
+<section class="panel" id="d5">
+
+<div class="dayhead">
+  <div>
+    <div class="kicker">Sábado</div>
+    <h2>05 SEP · Nashville</h2>
+  </div>
+  <span class="badge">Country Night</span>
+</div>
+
+<div class="alert warn">
+<b>⚠️ Atenção logística</b><br>
+Turo #1: devolução 09:00. Voo AA 4762: partida 09:48. Ajustar drop-off.
+</div>
+
+<div class="card">
+
+<h3>✈️ AA 4762 · RDU → BNA</h3>
+
+<div class="row">
+<b>Departure</b>
+<span>RDU · 09:48</span>
+</div>
+
+<div class="row">
+<b>Arrival</b>
+<span>BNA · 11:35</span>
+</div>
+
+<div class="row">
+<b>Cabin</b>
+<span>Economy</span>
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="t">
+<div class="time">15:00</div>
+<div><b>Check-in · Lindsley Ave</b></div>
+</div>
+
+<div class="t">
+<div class="time">16:00</div>
+<div><b>AJ's Good Time Bar</b></div>
+</div>
+
+<div class="t">
+<div class="time">19:00</div>
+<div><b>Grand Ole Opry</b></div>
+</div>
+
+<div class="t">
+<div class="time">22:00</div>
+<div><b>Morgan Wallen's This Bar</b></div>
+</div>
+
+<div class="t">
+<div class="time">23:30</div>
+<div><b>Robert's Western World</b></div>
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================== 06 SEP ==================== -->
+
+<section class="panel" id="d6">
+
+<div class="dayhead">
+  <div>
+    <div class="kicker">Domingo</div>
+    <h2>06 SEP · Nashville</h2>
+  </div>
+  <span class="badge">Full Day</span>
+</div>
+
+<div class="card">
+
+<div class="t">
+<div class="time">10:00</div>
+<div><b>Country Music Hall of Fame</b></div>
+</div>
+
+<div class="t">
+<div class="time">14:00</div>
+<div><b>Ryman Auditorium</b></div>
+</div>
+
+<div class="t">
+<div class="time">15:30</div>
+<div><b>Johnny Cash Museum</b></div>
+</div>
+
+<div class="t">
+<div class="time">19:00</div>
+<div><b>Broadway Round 2</b></div>
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================== 07 SEP ==================== -->
+
+<section class="panel" id="d7">
+
+<div class="dayhead">
+  <div>
+    <div class="kicker">Labor Day</div>
+    <h2>07 SEP · Back to Raleigh</h2>
+  </div>
+  <span class="badge">Recovery</span>
+</div>
+
+<div class="card">
+
+<h3>✈️ AA 4337 · BNA → RDU</h3>
+
+<div class="row">
+<b>Departure</b>
+<span>BNA · 12:59</span>
+</div>
+
+<div class="row">
+<b>Arrival</b>
+<span>RDU · 14:41</span>
+</div>
+
+<div class="row">
+<b>Cabin</b>
+<span>Economy</span>
+</div>
+
+</div>
+
+<div class="alert danger">
+<b>⚠️ Horário incompatível</b><br>
+F-150: retirada 13:00. Voo chega RDU 14:41. Ajustar retirada com o host.
+</div>
+
+<div class="card">
+
+<h3>🚙 Turo · Ford F-150 2025</h3>
+
+<div class="row">
+<b>Host</b>
+<span>Kristen</span>
+</div>
+
+<div class="row">
+<b>Pickup</b>
+<span>07 Sep · 13:00</span>
+</div>
+
+<div class="row">
+<b>Return</b>
+<span>09 Sep · 16:00</span>
+</div>
+
+<div class="row">
+<b>Location</b>
+<span>5304 Fairmead Circle, Raleigh, NC 27613</span>
+</div>
+
+</div>
+
+</section>
+
+<!-- ==================== 08 SEP MISHA ==================== -->
+
+<section class="panel" id="d8">
+
+<div class="dayhead">
+  <div>
+    <div class="kicker">Global Traits Discussion</div>
+    <h2>08 SEP · Misha</h2>
+  </div>
+  <span class="badge">BASF · 2TW</span>
+</div>
+
+<div class="card mission">
+<h3>Meeting Objective</h3>
+<div class="small">
+Connect the current Brazilian cotton trait-management reality with global
+strategy, stewardship and future technology priorities.
+</div>
+</div>
+
+<div class="card">
+
+<div class="row">
+<b>Location</b>
+<span>2TW · room to confirm</span>
+</div>
+
+<div class="row">
+<b>Time</b>
+<span>To confirm</span>
+</div>
+
+<div class="row">
+<b>Dinner</b>
+<span>The Angus Barn · suggested 19:00</span>
+</div>
+
+</div>
+
+<div class="section">Messages from Brazil</div>
+
+<div class="card">
+
+<div class="msg">
+<b>Brazil is becoming a more complex weed-management environment.</b><br>
+Palmer-type Amaranthus pressure, grasses and volunteer crops are forcing growers
+to rely on more diversified herbicide programs and stronger residual strategies.
+</div>
+
+<div class="msg">
+<b>The value of a trait is increasingly connected to the full management system.</b><br>
+Growers evaluate flexibility, consistency, operational fit and durability —
+not only the trait itself.
+</div>
+
+<div class="msg">
+<b>STP is creating an opportunity to reposition the conversation.</b><br>
+Durance S / isoxaflutole is helping move the system toward stronger residual
+management and a more preventive philosophy rather than relying only on rescue
+POST applications.
+</div>
+
+</div>
+
+<div class="section">STP adoption & stewardship</div>
+
+<div class="card">
+
+<label class="ck">
+<input type="checkbox" data-k="misha-stp1">
+<span>Share current adoption learnings from STP in Brazil.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="misha-stp2">
+<span>Discuss where growers see the strongest value of the platform.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="misha-stp3">
+<span>Discuss management practices that improve long-term durability.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="misha-stp4">
+<span>Discuss risks of simplifying the system around a single herbicide solution.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="misha-stp5">
+<span>Ask how global teams define stewardship success beyond sales/adoption.</span>
+</label>
+
+<div class="quote">
+How should we define stewardship success for a trait platform beyond adoption
+and short-term performance?
+</div>
+
+</div>
+
+<div class="section">Durance S inside STP</div>
+
+<div class="card">
+
+<label class="ck">
+<input type="checkbox" data-k="misha-dur1">
+<span>Explain the role of Durance S / isoxaflutole as a residual tool in the STP system.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="misha-dur2">
+<span>Share how this is changing the management conversation with customers.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="misha-dur3">
+<span>Discuss opportunities to integrate residuals with glufosinate-based programs.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="misha-dur4">
+<span>Discuss how to communicate system value without encouraging overdependence on one active ingredient.</span>
+</label>
+
+</div>
+
+<div class="section">Future traits & pipeline</div>
+
+<div class="card">
+
+<label class="ck">
+<input type="checkbox" data-k="misha-pipe1">
+<span>Understand global cotton traits pipeline and strategic priorities.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="misha-pipe2">
+<span>Ask which weed-management problems future traits are primarily designed to solve.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="misha-pipe3">
+<span>Discuss how Brazil should prepare before future PPO-based technologies arrive.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="misha-pipe4">
+<span>Identify stewardship principles that should be designed before commercial launch.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="misha-pipe5">
+<span>Discuss opportunities for Brazil to contribute earlier to global development decisions.</span>
+</label>
+
+</div>
+
+<div class="section">Key questions for Misha</div>
+
+<div class="card">
+
+<div class="q">
+<b>1. What do you see as the biggest strategic challenge for cotton traits globally over the next five years?</b>
+</div>
+
+<div class="q">
+<b>2. What lessons from existing herbicide-tolerant systems should shape the next generation?</b>
+</div>
+
+<div class="q">
+<b>3. How can Brazil contribute earlier to global trait-development and stewardship decisions?</b>
+</div>
+
+<div class="q">
+<b>4. Which stewardship elements should be mandatory before a future PPO platform is launched?</b>
+</div>
+
+<div class="q">
+<b>5. How should we balance flexibility for growers with protection of technology durability?</b>
+</div>
+
+<div class="q">
+<b>6. What global learnings can help us strengthen the role of residual management within trait systems?</b>
+</div>
+
+<div class="q">
+<b>7. Where do you see the biggest opportunity for STP to create differentiated value in Brazil?</b>
+</div>
+
+<div class="q">
+<b>8. What should we start building now that will matter two or three seasons from today?</b>
+</div>
+
+</div>
+
+<div class="card">
+<h3>Misha · Key Learnings</h3>
+<textarea data-note="misha-learnings"></textarea>
+</div>
+
+<div class="card">
+<h3>Actions for Brazil</h3>
+<textarea data-note="misha-actions"></textarea>
+</div>
+
+</section>
+
+<!-- ==================== 09 SEP CHARLIE + GREG ==================== -->
+
+<section class="panel" id="d9">
+
+<div class="dayhead">
+  <div>
+    <div class="kicker">Final Technical Day</div>
+    <h2>09 SEP · Charlie + Greg</h2>
+  </div>
+  <span class="badge">NC State + BASF</span>
+</div>
+
+<div class="card">
+
+<div class="t">
+<div class="time">AM</div>
+<div>
+<b>Charlie Cahoon</b>
+<div class="small">NC State · Weed Science</div>
+</div>
+</div>
+
+<div class="t">
+<div class="time">PM</div>
+<div>
+<b>Greg Baldwin</b>
+<div class="small">BASF · 2TW or Davis Drive</div>
+</div>
+</div>
+
+<div class="t">
+<div class="time">16:00</div>
+<div><b>Turo F-150 return</b></div>
+</div>
+
+<div class="t">
+<div class="time">Night</div>
+<div><b>Return to Brazil</b></div>
+</div>
+
+</div>
+
+<!-- CHARLIE -->
+
+<div class="section">Charlie · Opening messages from Brazil</div>
+
+<div class="card mission">
+<h3>Meeting Objective</h3>
+<div class="small">
+Understand U.S. weed-resistance lessons and translate them into a more durable
+Brazilian cotton weed-management strategy.
+</div>
+</div>
+
+<div class="card">
+
+<h3>Key messages I should share first</h3>
+
+<div class="msg">
+<b>1. Brazilian cotton weed management is getting more complex.</b><br>
+Caruru / Palmer-type Amaranthus pressure, grasses such as goosegrass, volunteer
+soybean and complex resistance situations are forcing us to think beyond one
+POST solution.
+</div>
+
+<div class="msg">
+<b>2. Our system is highly intensive.</b><br>
+Long growing seasons, tropical conditions, high weed pressure and soybean-cotton
+rotations create repeated selection pressure across multiple herbicide applications.
+</div>
+
+<div class="msg">
+<b>3. We are trying to shift from rescue management to preventive management.</b><br>
+One of the biggest advances we are seeing is stronger use of residual herbicides
+to reduce new flushes and decrease dependence on repeated rescue applications.
+</div>
+
+<div class="msg">
+<b>4. Durance S is becoming an important tool inside STP.</b><br>
+Durance S is isoxaflutole, an HPPD inhibitor (Group 27), and within STP we are
+using it as a residual-management tool to strengthen the system and help extend
+the clean period.
+</div>
+
+<div class="msg">
+<b>5. The key question for us is durability.</b><br>
+We do not want to replace dependence on one herbicide with dependence on another.
+We want diversified programs combining traits, residuals and effective POST options.
+</div>
+
+<div class="callout">
+<b>Positioning:</b> Durance S should be discussed as one component of a broader
+system. Its strategic value is helping reduce new emergence and reinforce
+program robustness.
+</div>
+
+</div>
+
+<div class="section">Charlie · Palmer / PPO / stewardship</div>
+
+<div class="card">
+
+<label class="ck">
+<input type="checkbox" data-k="charlie1">
+<span>Current Palmer resistance status in NC / Southeast.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="charlie2">
+<span>Modes of action under greatest resistance pressure.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="charlie3">
+<span>How widespread is PPO resistance?</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="charlie4">
+<span>Target-site vs metabolic resistance.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="charlie5">
+<span>Mandatory stewardship for a future PPO platform.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="charlie6">
+<span>Role of HPPD residuals such as isoxaflutole in diversified programs.</span>
+</label>
+
+</div>
+
+<div class="section">Charlie · Top questions</div>
+
+<div class="card">
+
+<div class="q">
+<b>1. What is the biggest Palmer amaranth resistance concern you see today?</b>
+</div>
+
+<div class="q">
+<b>2. Which herbicide mode of action are you most concerned about losing next?</b>
+</div>
+
+<div class="q">
+<b>3. How serious is PPO resistance today and where do you see it heading?</b>
+</div>
+
+<div class="q">
+<b>4. What stewardship rules should accompany a new PPO-tolerant cotton technology?</b>
+</div>
+
+<div class="q">
+<b>5. What was the biggest lesson from the dicamba era?</b>
+</div>
+
+<div class="q">
+<b>6. Are we becoming too dependent on glufosinate?</b>
+</div>
+
+<div class="q">
+<b>7. How important are overlapping residuals for long-term Palmer management?</b>
+</div>
+
+<div class="q">
+<b>8. Where is the practical plant-size cutoff for consistent POST control?</b>
+</div>
+
+<div class="q">
+<b>9. How should resistance management be coordinated across soybean and cotton?</b>
+</div>
+
+<div class="q">
+<b>10. If you were designing Brazil's cotton weed-management strategy for the next five years, what would you prioritize?</b>
+</div>
+
+</div>
+
+<div class="card">
+<h3>Charlie · Key Learnings</h3>
+<textarea data-note="charlie-learnings"></textarea>
+</div>
+
+<div class="card">
+<h3>Questions to take to Greg</h3>
+<textarea data-note="charlie-to-greg"></textarea>
+</div>
+
+<!-- GREG -->
+
+<div class="section">Greg Baldwin · Technical & Strategic Checklist</div>
+
+<div class="card mission">
+
+<h3>Meeting Objective</h3>
+
+<div class="small">
+Translate U.S. herbicide-system learnings into concrete strategic questions
+for Brazilian cotton and future BASF technologies.
+</div>
+
+</div>
+
+<div class="section">Greg · Dicamba lessons</div>
+
+<div class="card">
+
+<label class="ck">
+<input type="checkbox" data-k="greg-dic1">
+<span>Main biological limitations of dicamba systems.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-dic2">
+<span>Main operational / stewardship limitations.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-dic3">
+<span>Where resistance or reduced sensitivity changed the system.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-dic4">
+<span>What should BASF avoid repeating with future platforms?</span>
+</label>
+
+<div class="quote">
+What has the U.S. learned from relying heavily on dicamba for Palmer amaranth?
+</div>
+
+</div>
+
+<div class="section">Greg · Glufosinate & residual strategy</div>
+
+<div class="card">
+
+<label class="ck">
+<input type="checkbox" data-k="greg-gluf1">
+<span>How sustainable is current dependence on glufosinate?</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-gluf2">
+<span>Where does glufosinate become inconsistent?</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-res1">
+<span>Discuss residual management as a system-level differentiator.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-res2">
+<span>Position Durance S / isoxaflutole as an HPPD residual component within STP.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-res3">
+<span>Discuss whether residual + glufosinate can deliver greater system robustness than kill + kill strategies.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-res4">
+<span>Discuss overlapping residuals and season-long Palmer suppression.</span>
+</label>
+
+<div class="quote">
+Could a stronger residual-based system plus glufosinate be more durable than
+relying mainly on two POST modes of action?
+</div>
+
+</div>
+
+<div class="section">Greg · Future PPO platform</div>
+
+<div class="card">
+
+<label class="ck">
+<input type="checkbox" data-k="greg-ppo1">
+<span>Define the real job-to-be-done for a future PPO-tolerant cotton platform.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-ppo2">
+<span>Where should PPO add value: POST activity, residual, flexibility, mixtures or system robustness?</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-ppo3">
+<span>Main resistance risks and stewardship requirements.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-ppo4">
+<span>How should future PPO technology be positioned relative to dicamba systems?</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-ppo5">
+<span>Which mistakes should be avoided from day one?</span>
+</label>
+
+<div class="quote">
+If we launch a PPO-based cotton platform in Brazil, what stewardship mistakes
+should we absolutely avoid?
+</div>
+
+</div>
+
+<div class="section">Greg · Research questions for Brazil</div>
+
+<div class="card">
+
+<label class="ck">
+<input type="checkbox" data-k="greg-r1">
+<span>Design PPO vs dicamba benchmark trials under Brazilian conditions.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-r2">
+<span>Compare tank mix vs sequential strategies.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-r3">
+<span>Measure beyond 14 DAA: reinfestation, new plants/m², survivors and seed production.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-r4">
+<span>Include crop safety and operational flexibility.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-r5">
+<span>Evaluate soybean → cotton system implications.</span>
+</label>
+
+<label class="ck">
+<input type="checkbox" data-k="greg-r6">
+<span>Identify where Brazil can generate data useful for global strategy.</span>
+</label>
+
+</div>
+
+<div class="section">Greg · Strategic questions</div>
+
+<div class="card">
+
+<div class="q">
+<b>1. What has the U.S. learned from relying heavily on dicamba for Palmer?</b>
+</div>
+
+<div class="q">
+<b>2. Where are dicamba-based systems most vulnerable?</b>
+</div>
+
+<div class="q">
+<b>3. Are we over-relying on glufosinate as the rescue backbone?</b>
+</div>
+
+<div class="q">
+<b>4. Could stronger residual programs reduce dependence on POST herbicides?</b>
+</div>
+
+<div class="q">
+<b>5. Where do you see the strongest role for isoxaflutole in a future-ready cotton program?</b>
+</div>
+
+<div class="q">
+<b>6. What should be the job-to-be-done of a future PPO cotton platform?</b>
+</div>
+
+<div class="q">
+<b>7. Which stewardship principles should be designed before launch?</b>
+</div>
+
+<div class="q">
+<b>8. Which technical questions should Brazil answer in the next two seasons?</b>
+</div>
+
+<div class="q">
+<b>9. Which U.S. learnings are highly transferable to Brazil — and which are not?</b>
+</div>
+
+<div class="q">
+<b>10. If you were designing Brazil's herbicide strategy for the next five years, what would you prioritize?</b>
+</div>
+
+</div>
+
+<div class="card">
+<h3>Greg · Key Learnings</h3>
+<textarea data-note="greg-learnings"></textarea>
+</div>
+
+<div class="card">
+<h3>Brazil Research Priorities</h3>
+<textarea data-note="greg-research"></textarea>
+</div>
+
+<div class="card">
+<h3>Final Trip Notes</h3>
+<textarea data-note="final"></textarea>
+</div>
+
+</section>
+
+<!-- ==================== TRANSPORT ==================== -->
+
+<section class="panel" id="transport">
+
+<div class="dayhead">
+  <div>
+    <div class="kicker">Quick Access</div>
+    <h2>Transport Hub</h2>
+  </div>
+</div>
+
+<div class="card">
+<h3>🚙 Car #1</h3>
+<div class="small">
+WESTGATE RENTALS RALEIGH LLC · Mitsubishi<br>
+02 Sep 09:00 → 05 Sep 09:00<br>
+RDU Airport
+</div>
+</div>
+
+<div class="card">
+<h3>✈️ AA 4762</h3>
+<div class="small">
+05 Sep · RDU 09:48 → BNA 11:35
+</div>
+</div>
+
+<div class="card">
+<h3>✈️ AA 4337</h3>
+<div class="small">
+07 Sep · BNA 12:59 → RDU 14:41
+</div>
+</div>
+
+<div class="card">
+<h3>🚙 Car #2</h3>
+<div class="small">
+Kristen · Ford F-150 2025<br>
+07 Sep 13:00 → 09 Sep 16:00<br>
+5304 Fairmead Circle, Raleigh
+</div>
+</div>
+
+</section>
+
+<!-- ==================== LEARNINGS ==================== -->
+
+<section class="panel" id="learn">
+
+<div class="dayhead">
+  <div>
+    <div class="kicker">Cross-trip notebook</div>
+    <h2>Learnings</h2>
+  </div>
+</div>
+
+<div class="card">
+<h3>Field observations</h3>
+<textarea data-note="lf"></textarea>
+</div>
+
+<div class="card">
+<h3>Brazil implications</h3>
+<textarea data-note="lb"></textarea>
+</div>
+
+<div class="card">
+<h3>Questions to carry forward</h3>
+<textarea data-note="lq"></textarea>
+</div>
+
+<div class="card">
+<h3>Actions after trip</h3>
+<textarea data-note="actions"></textarea>
+</div>
+
+</section>
+
+<nav class="bottom">
+
+<button class="nav active" data-nav="days">
+📅<br>
+Days
+</button>
+
+<button class="nav" data-nav="transport">
+✈️<br>
+Transport
+</button>
+
+<button class="nav" data-nav="learn">
+🧠<br>
+Learnings
+</button>
+
+</nav>
+
 </div>
 
 <script>
 (function(){
-const app=document.getElementById('app'),tabs=[...app.querySelectorAll('.tab')],panels=[...app.querySelectorAll('.panel')],navs=[...app.querySelectorAll('.nav')];let current='d3';
-function show(id){panels.forEach(p=>p.classList.toggle('active',p.id===id));tabs.forEach(t=>t.classList.toggle('active',t.dataset.id===id));navs.forEach(n=>n.classList.toggle('active',(n.dataset.nav==='days'&&id.startsWith('d'))||n.dataset.nav===id));if(id.startsWith('d'))current=id;window.scrollTo({top:0,behavior:'smooth'})}
-tabs.forEach(t=>t.addEventListener('click',()=>show(t.dataset.id)));navs.forEach(n=>n.addEventListener('click',()=>show(n.dataset.nav==='days'?current:n.dataset.nav)));
-app.querySelectorAll('[data-k]').forEach(c=>{const k='trip26:'+c.dataset.k;try{c.checked=localStorage.getItem(k)==='1'}catch(e){}c.addEventListener('change',()=>{try{localStorage.setItem(k,c.checked?'1':'0')}catch(e){}})});
-app.querySelectorAll('textarea[data-note]').forEach(t=>{const k='trip26:'+t.dataset.note;try{const v=localStorage.getItem(k);if(v!==null)t.value=v}catch(e){}t.addEventListener('input',()=>{try{localStorage.setItem(k,t.value)}catch(e){}})});
-let deferredPrompt=null;const box=document.getElementById('installBox'),btn=document.getElementById('installBtn');
-window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;box.classList.add('show')});
-btn.addEventListener('click',async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;box.classList.remove('show')});
-if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
+
+const app = document.getElementById('app');
+
+const tabs = [
+  ...app.querySelectorAll('.tab')
+];
+
+const panels = [
+  ...app.querySelectorAll('.panel')
+];
+
+const navs = [
+  ...app.querySelectorAll('.nav')
+];
+
+let current = 'd3';
+
+function show(id){
+
+  panels.forEach(p =>
+    p.classList.toggle('active', p.id === id)
+  );
+
+  tabs.forEach(t =>
+    t.classList.toggle('active', t.dataset.id === id)
+  );
+
+  navs.forEach(n =>
+    n.classList.toggle(
+      'active',
+      (n.dataset.nav === 'days' && id.startsWith('d')) ||
+      n.dataset.nav === id
+    )
+  );
+
+  if(id.startsWith('d')){
+    current = id;
+  }
+
+  window.scrollTo({
+    top:0,
+    behavior:'smooth'
+  });
+
+}
+
+tabs.forEach(t => {
+
+  t.addEventListener(
+    'click',
+    () => show(t.dataset.id)
+  );
+
+});
+
+navs.forEach(n => {
+
+  n.addEventListener(
+    'click',
+    () => show(
+      n.dataset.nav === 'days'
+        ? current
+        : n.dataset.nav
+    )
+  );
+
+});
+
+app.querySelectorAll('[data-k]').forEach(c => {
+
+  const k = 'trip26:' + c.dataset.k;
+
+  try{
+    c.checked = localStorage.getItem(k) === '1';
+  }catch(e){}
+
+  c.addEventListener('change', () => {
+
+    try{
+      localStorage.setItem(
+        k,
+        c.checked ? '1' : '0'
+      );
+    }catch(e){}
+
+  });
+
+});
+
+app.querySelectorAll('textarea[data-note]').forEach(t => {
+
+  const k = 'trip26:' + t.dataset.note;
+
+  try{
+
+    const v = localStorage.getItem(k);
+
+    if(v !== null){
+      t.value = v;
+    }
+
+  }catch(e){}
+
+  t.addEventListener('input', () => {
+
+    try{
+      localStorage.setItem(
+        k,
+        t.value
+      );
+    }catch(e){}
+
+  });
+
+});
+
+if('serviceWorker' in navigator){
+
+  window.addEventListener('load', () => {
+
+    navigator.serviceWorker
+      .register('./sw.js')
+      .then(r => r.update())
+      .catch(() => {});
+
+  });
+
+}
+
 show('d3');
+
 })();
 </script>
-</body></html>
+
+</body>
+</html>
